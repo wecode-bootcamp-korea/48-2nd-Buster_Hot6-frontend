@@ -7,11 +7,11 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const saveEmail = e => {
+  const handleEmail = e => {
     setEmail(e.target.value);
   };
 
-  const savePassword = e => {
+  const handlePassword = e => {
     setPassword(e.target.value);
   };
 
@@ -33,8 +33,7 @@ export default function Login() {
           localStorage.setItem('token', data.accessToken);
           navigate('/');
         }
-        console.log(data.message);
-        console.log(data.accessToken);
+
         if (data.message === 'specified user does not exist') {
           alert('존재하지 않는 유저입니다.');
         }
@@ -49,7 +48,11 @@ export default function Login() {
         <div className="logoWrap">
           <div className="logo">
             <div className="imageWrap">
-              <img className="logoPicture" src="/images/homelogo.png"></img>
+              <img
+                className="logoPicture"
+                src="/images/homelogo.png"
+                alt="logo"
+              />
               <p>오늘의 집</p>
             </div>
 
@@ -58,7 +61,7 @@ export default function Login() {
                 className="email"
                 type="email"
                 placeholder="이메일"
-                onChange={saveEmail}
+                onChange={handleEmail}
                 value={email}
               />
 
@@ -66,7 +69,7 @@ export default function Login() {
                 className="password"
                 type="password"
                 placeholder="비밀번호"
-                onChange={savePassword}
+                onChange={handlePassword}
                 value={password}
               />
 

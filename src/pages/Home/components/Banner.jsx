@@ -13,7 +13,7 @@ export default function Banner({ images = [] }) {
           setImage(prevImage => (prevImage + 1) % images.length);
         }}
       >
-        next
+        +
       </button>
       <button
         className="prevBtn"
@@ -23,7 +23,7 @@ export default function Banner({ images = [] }) {
           );
         }}
       >
-        prev
+        -
       </button>
     </div>
   );

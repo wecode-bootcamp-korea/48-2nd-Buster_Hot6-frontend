@@ -1,0 +1,31 @@
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  img {
+    margin-top: 80px;
+    width: 80%;
+    height: 400px;
+  }
+
+  .nextBtn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  .prevBtn {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+}

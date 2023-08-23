@@ -1,8 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-.containerWrap {
+.login {
   height: 100%;
 
   .container {
@@ -27,6 +23,7 @@
 
         .imageWrap {
           display: flex;
+          align-items: center;
 
           .logoPicture {
             width: 50px;
@@ -65,9 +62,12 @@
             padding: 15px 10px;
             width: 100%;
             height: 52px;
-            background-color: #35c5f0;
             color: #ffff;
             border: none;
+            background-color: gray;
+          }
+          .active {
+            background-color: #35c5f0;
           }
         }
 

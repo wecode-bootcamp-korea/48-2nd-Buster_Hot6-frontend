@@ -1,0 +1,17 @@
+.productCardContainer {
+  cursor: pointer;
+}
+
+.productThumbnail {
+  width: auto;
+  border-radius: 14px;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.productTemporary {
+  width: 500px;
+  height: 400px;
+  background-color: black;
+}

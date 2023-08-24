@@ -1,0 +1,38 @@
+.carouselContainer {
+  display: block;
+  align-items: stretch;
+  width: 100%;
+  height: 380px;
+
+  .imgWrapper {
+    display: flex;
+    height: 100%;
+  }
+
+  .carouselContnent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .carouselImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carouselBtnWrapper {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0 40px;
+    transform: translateY(-50%);
+
+    .carouselBtn {
+      background: white;
+      border-color: black;
+      border-radius: 50%;
+    }
+  }
+}

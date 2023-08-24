@@ -16,8 +16,7 @@ export default function Login() {
   };
 
   const goToHome = () => {
-    navigate('/');
-    fetch('http://10.58.52.144:3000/users/signup', {
+    fetch('http://10.58.52.181:3000/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,6 +73,7 @@ export default function Login() {
               />
 
               <button
+                type="button"
                 className={isInputValue ? 'btn active' : 'btn'}
                 onClick={goToHome}
                 disabled={!isInputValue}

@@ -1,30 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Banner.scss';
 
-export default function Banner({ images = [] }) {
-  const [image, setImage] = useState(0);
+const Banner = () => {
+  return <div>Banner</div>;
+};
 
-  return (
-    <div className="banner">
-      <img src={images[image]} alt="Banner" />
-      <button
-        className="nextBtn"
-        onClick={() => {
-          setImage(prevImage => (prevImage + 1) % images.length);
-        }}
-      >
-        +
-      </button>
-      <button
-        className="prevBtn"
-        onClick={() => {
-          setImage(
-            prevImage => (prevImage + images.length - 1) % images.length,
-          );
-        }}
-      >
-        -
-      </button>
-    </div>
-  );
-}
+export default Banner;

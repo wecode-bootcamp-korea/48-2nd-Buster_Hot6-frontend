@@ -1,31 +1,47 @@
 .banner {
   position: relative;
+}
+.imgContainer {
+  position: relative;
   display: flex;
   justify-content: center;
-  img {
-    margin-top: 80px;
-    width: 80%;
-    height: 400px;
-  }
+}
 
-  .nextBtn {
-    position: absolute;
-    right: 50px;
-    bottom: 170px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  .prevBtn {
-    position: absolute;
-    left: 50px;
-    bottom: 170px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
+.images {
+  width: 90%;
+  height: 500px;
+  padding-top: 100px;
+}
+.bannerTextWrap {
+  display: flex;
+  flex-direction: column;
+}
+.bannerTitle,
+.bannerId {
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  color: white;
+  padding: 2px 5px;
+}
+
+.bannerTitle {
+  font-size: 50px;
+  font-weight: bold;
+}
+.bannerId {
+  font-size: 20px;
+}
+
+.btn {
+  background-color: #f4f4f4;
+  border: none;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.5s;
 }

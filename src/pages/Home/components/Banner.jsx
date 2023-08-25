@@ -44,7 +44,7 @@ const Banner = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(handleNext, 5000);
+    const timer = setTimeout(handleNext, 1000);
     return () => clearTimeout(timer);
   }, [count]);
 

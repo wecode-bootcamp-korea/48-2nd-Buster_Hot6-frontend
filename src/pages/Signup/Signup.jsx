@@ -32,7 +32,7 @@ export default function Signup() {
     nickname.length <= 15;
 
   const goToHome = () => {
-    fetch('http://10.58.52.181:3000/users/signup', {
+    fetch('http://10.58.52.142:3000/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ export default function Login() {
   };
 
   const goToHome = () => {
-    fetch('http://10.58.52.181:3000/users/signin', {
+    fetch('http://10.58.52.142:3000/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export default function Login() {
               <p>오늘의 집</p>
             </div>
 
-            <form className="form">
+            <div className="form">
               <input
                 className="email"
                 type="email"
@@ -73,14 +73,13 @@ export default function Login() {
               />
 
               <button
-                type="button"
                 className={isInputValue ? 'btn active' : 'btn'}
                 onClick={goToHome}
                 disabled={!isInputValue}
               >
                 로그인
               </button>
-            </form>
+            </div>
             <div className="rePassword">
               <a>비밀번호 재설정 </a>
               <Link to="/signup">회원가입</Link>

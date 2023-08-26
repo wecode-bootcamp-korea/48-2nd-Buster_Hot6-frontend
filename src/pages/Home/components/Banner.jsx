@@ -7,12 +7,11 @@ const Banner = () => {
 
   const handlePrev = () => {
     setCount(
-      prevCount =>
-        (prevCount - 1 + BANNER_IMAGES.length) % BANNER_IMAGES.length,
+      prevCount => (prevCount - 1 + bannerImages.length) % bannerImages.length,
     );
   };
   const handleNext = () => {
-    setCount(prevCount => (prevCount + 1) % BANNER_IMAGES.length);
+    setCount(prevCount => (prevCount + 1) % bannerImages.length);
   };
 
   useEffect(() => {

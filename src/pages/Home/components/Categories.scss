@@ -1,8 +1,32 @@
+.categoriesWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .categoriesContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  justify-content: center;
+  overflow: hidden;
+}
+.btn {
+  background-color: #f4f4f4;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &.prev {
+    margin-right: 10px;
+  }
+
+  &.next {
+    margin-left: 10px;
+  }
 }
 
 .categoryCard {

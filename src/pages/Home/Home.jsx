@@ -8,6 +8,8 @@ export default function Home() {
     <div className="home">
       <Banner />
       <Categories />
+      <Categories />
+      <Categories />
     </div>
   );
 }

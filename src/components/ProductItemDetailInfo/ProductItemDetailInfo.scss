@@ -1,0 +1,117 @@
+.productionsellingDetailInfoContent {
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+}
+
+.productionsellingContent {
+  margin: 60px auto 0px;
+  max-width: 692px;
+}
+
+.productionsellingSection {
+  margin: 0px 0px 80px;
+  padding: 0px;
+  font-size: 15px;
+}
+
+.productionsellingSectionHeader {
+  position: relative;
+  margin: 20px 0px;
+}
+
+.productionsellingSectionHeaderReview {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.productionsellingSectionTitle {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.productionsellingSectionInfo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 40px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255) 60%);
+  z-index: 1;
+}
+
+.productionsellingSectionInfoImg {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.count {
+  color: rgb(53, 197, 240);
+  margin-left: 4px;
+}
+
+.productionsellingSectionRight {
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 700;
+}
+
+.reviewBtn {
+  color: rgb(53, 197, 240);
+  margin: 0px;
+  padding: 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.productionReviewFeed {
+}
+
+.productionReviewFeedHeader {
+  width: 100%;
+  background-color: rgb(247, 248, 250);
+  border-radius: 8px;
+  text-align: center;
+  margin: 16px 0px 24px;
+}
+
+.productionReviewFeedHeaderStars {
+  padding: 24px 0px;
+  display: flex;
+}
+
+.productionReviewFeedHeaderStarsBadge {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  flex: 0 0 500px;
+  border-right: 1px solid rgb(237, 237, 237);
+}
+
+.productionReviewFeedHeaderWholeStars {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+.productionReviewFeedHeaderWholeStarsWrap {
+}
+
+.starIcon {
+  font-size: 24px;
+}
+
+.fianlRatingScore {
+  display: inline-block;
+  font-size: 34px;
+  margin-left: 12px;
+  font-weight: 700;
+}

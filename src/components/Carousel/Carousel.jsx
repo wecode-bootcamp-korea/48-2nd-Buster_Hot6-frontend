@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import './ProductsCarousel.scss';
 import useInterval from '../../hooks/useInterval';
 
 const FIRST_SLIDE_INDEX = 0;
 
-export default function ProductsCarousel({ images }) {
+export default function Carousel({
+  images,
+  size = 'medium',
+  intervalTime = 3500,
+}) {
   const [currentIndex, setCurrentIndex] = useState(FIRST_SLIDE_INDEX);
 
   useInterval(() => {
@@ -13,14 +16,13 @@ export default function ProductsCarousel({ images }) {
     } else {
       setCurrentIndex(currentIndex + 1);
     }
-  }, 3500);
+  }, intervalTime);
 
   const nextSlide = () => {
     if (currentIndex === images.length - 1) {
       setCurrentIndex(FIRST_SLIDE_INDEX);
       return;
     }
-
     setCurrentIndex(currentIndex + 1);
   };
 
@@ -33,7 +35,7 @@ export default function ProductsCarousel({ images }) {
   return (
     <>
       <div
-        className="imgWrapper"
+        className={getContainerStyle(size)}
         style={{
           transition: `transform 350ms ease 0s`,
           transform: `translateX(-${currentIndex}00%)`,
@@ -55,4 +57,37 @@ export default function ProductsCarousel({ images }) {
       </div>
     </>
   );
+}
+
+function getContainerStyle(size) {
+  const baseStyle = 'baseStyle';
+  const { container } = getImageSizeStyle(size);
+  const { transition } = getImageSizeStyle(size);
+  const { transform } = getImageSizeStyle(size);
+  return `${baseStyle} ${container} ${transition} ${transform}`;
+}
+
+function getImageSizeStyle(size, currentIndex) {
+  switch (size) {
+    case 'productContainer':
+      return {
+        container: 'propductImgWrapper',
+        transition: `transform 350ms ease 0s`,
+        transform: `translateX(-${currentIndex}00%)`,
+        image: 'smallImg',
+      };
+    case 'medium':
+      return {
+        container: 'mediumContainer',
+        transform: `translateX(-${currentIndex}00%)`,
+        image: 'mediumImg',
+      };
+    case 'large':
+      return {
+        container: 'largeContainer',
+        image: 'largeImg',
+      };
+    default:
+      throw new Error(`Unsupported type size: ${size}`);
+  }
 }

@@ -1,0 +1,40 @@
+.productionReview {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ededed;
+}
+
+.productionReviewItemWriter {
+  display: flex;
+}
+
+.productionReviewItemWriterInfo {
+  flex: 0 0 auto;
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+.productionReviewItemWriterName {
+  font-size: 13px;
+  color: #424242;
+  margin-bottom: 7px;
+}
+
+.reviewStarIconWriter {
+  font-size: 16px;
+}
+
+.productionReviewItemWriterInfoDate {
+  vertical-align: 3px;
+  margin-left: 5px;
+  font-size: 13px;
+  color: #757575;
+}
+
+.productionReviewItemDescription {
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: normal;
+  color: #424242;
+}

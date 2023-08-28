@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './Categories.scss';
 
 const Categories = () => {
@@ -25,27 +26,34 @@ const Categories = () => {
       );
     }
   };
+  // useEffect(() => {
+  //   fetch('/data/categories.json/1')
+  //     .then(res => res.json())
+  //     .then(result => setPictures(result));
+  // }, []);
 
   let displayedImages = MOCK_DATA.slice(pictures, pictures + IMAGES_PER_VIEW);
 
   return (
     <div className="categoriesWrapper">
       <p className="hash">#{displayedImages[0]?.hash}</p>
-      <button className="btn prev" onClick={handlePrev}>
-        &lt;
-      </button>
-      <div className="categoriesContainer">
-        {displayedImages.map(item => (
-          <div className="categoryCard" key={item.image}>
-            <img className="images" src={item.image} alt={item.title} />
-            <h2 className="title">{item.title}</h2>
-            <p className="text">{item.text}</p>
-          </div>
-        ))}
+      <div>
+        <button className="btn prev" onClick={handlePrev}>
+          &lt;
+        </button>
+        <div className="categoriesContainer">
+          {displayedImages.map(item => (
+            <div className="categoryCard" key={item.image}>
+              <img className="images" src={item.image} alt={item.title} />
+              <h2 className="title">{item.title}</h2>
+              <p className="text">{item.text}</p>
+            </div>
+          ))}
+        </div>
+        <button className="btn next" onClick={handleNext}>
+          &gt;
+        </button>
       </div>
-      <button className="btn next" onClick={handleNext}>
-        &gt;
-      </button>
     </div>
   );
 };

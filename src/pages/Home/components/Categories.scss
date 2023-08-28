@@ -1,7 +1,9 @@
 .categoriesWrapper {
   position: relative;
   display: flex;
-  align-items: center;
+
+  flex-direction: column;
+  align-items: flex-start;
 }
 .categoriesContainer {
   display: flex;

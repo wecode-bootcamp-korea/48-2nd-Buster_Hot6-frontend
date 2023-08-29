@@ -1,74 +1,44 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './ProductListCard.scss';
+import { useNavigate } from 'react-router-dom';
 
-export default function ProductListCard() {
-  const [products, setProducts] = [];
+export default function ProductListCard({
+  product,
+  product: { id, image_url, name, description, price },
+}) {
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch('http://10.58.52.235:3000/products/bro', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-    })
-      .then(res => {
-        console.log(res);
-        if (res.ok === true) {
-          return res;
-        }
-        throw new Error('통신 실패 😭');
-      })
-      .catch(error => console.log(error))
-      .then(data => {
-        console.log('???', data);
-        if (typeof data !== 'undefined') {
-          alert('성공');
-          setProducts(data.products);
-        } else if (typeof data === 'undefined') {
-          alert('안 됨');
-        }
-      });
-  }, []);
-  console.log(products);
-
-  {
-    products?.map((item, i) => {
-      console.log(item);
-      return (
-        <div className="storeItemContentBox">
-          <div className="storeItemContentWrap">
-            <article className="storeItemContent">
-              <a className="storeItemOverlay" />
-              <div className="storeItemImg">
-                <div className="storeProductItemImgWrap">
-                  <img
-                    className="productItemImg"
-                    src={item.image_url}
-                    alt={i}
-                  />
-                  <button className="storeItemScrapBadge">스크랩</button>
-                </div>
-              </div>
-              <div className="storeItemDescriptionContentContainer">
-                <div>
-                  <h1 className="storeItemDescriptionContentHeader">
-                    <div className="storeItemDescriptionBrand">브랜드 없음</div>
-                    <div className="storeItemDescriptionName">{item.name}</div>
-                    <div className="storeItemDescriptionName">
-                      {item.description}
-                    </div>
-                  </h1>
-                  <div className="storeItemDescriptionPrice">
-                    <span className="storeItemDescriptionOriginalPrice">
-                      {item.price}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </article>
+  return (
+    <div className="storeItemContentBox">
+      <div className="storeItemContentWrap">
+        <article className="storeItemContent">
+          <div
+            className="storeItemOverlay"
+            onClick={() => {
+              navigate(`/store/${id}`, { state: { product } });
+            }}
+          />
+          <div className="storeItemImg">
+            <div className="storeProductItemImgWrap">
+              <img className="productItemImg" src={image_url} alt="나나나" />
+              <button className="storeItemScrapBadge">스크랩</button>
+            </div>
           </div>
-        </div>
-      );
-    });
-  }
+          <div className="storeItemDescriptionContentContainer">
+            <div>
+              <h1 className="storeItemDescriptionContentHeader">
+                <div className="storeItemDescriptionName">{name}</div>
+                <div className="storeItemDescriptionName">{description}</div>
+              </h1>
+              <div className="storeItemDescriptionPrice">
+                <span className="storeItemDescriptionOriginalPrice">
+                  {price}
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  );
 }

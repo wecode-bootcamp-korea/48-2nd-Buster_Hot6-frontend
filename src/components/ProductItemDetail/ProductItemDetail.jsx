@@ -3,10 +3,19 @@ import './ProductItemDetail.scss';
 import ProductItemTap from '../ProductItemTap/ProductItemTap';
 import ProductItemDetailInfo from '../ProductItemDetailInfo/ProductItemDetailInfo';
 import Reviews from '../Reviews/Reviews';
+import { useLocation } from 'react-router-dom';
 
 export default function ProductItemDetail() {
-  const [selected, setSelected] = useState('상품 옵션1111');
+  // const {
+  //   state: {
+  //     product: { id, image_url, name, description, price },
+  //   },
+  // } = useLocation();
+  const [selected, setSelected] = useState('상품 이름');
   const handleSelect = e => setSelected(e.target.value);
+  const handleShoppingBasket = e => {
+    //여기서 장바구니에 추가하면 됨!
+  };
 
   return (
     <div className="productSelling">
@@ -19,18 +28,20 @@ export default function ProductItemDetail() {
         <div className="productOverview">
           <div className="productOvewviewImg">
             <div className="sellingProductImgContainer">
-              <div className="sellingProductImg" />
+              <div className="sellingProductImg">
+                <img
+                  className="sellingProductImgUrl"
+                  src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168266558366770905.png?gif=1&w=1280&h=1280&c=c&webp=1"
+                />
+              </div>
             </div>
           </div>
           <div className="productOvewviewInfo">
             <div className="sellingProductHeader">
               <h1 className="sellingProductHeaderTitle">
-                <p className="sellingProductHeaderTitleBrand">코튼리빙</p>
+                <p className="sellingProductHeaderTitleBrand">브랜드?</p>
                 <div className="sellingProductHeaderTitleNameWrap">
-                  <span className="sellingProductHeaderTitleName">
-                    [8/28하루만29,900원] 40수 코마사 호텔수건 200g 10장
-                    압도적리뷰!
-                  </span>
+                  <span className="sellingProductHeaderTitleName">상품명</span>
                   <button className="sellingProductHeaderBookmar" />
                 </div>
               </h1>
@@ -55,7 +66,7 @@ export default function ProductItemDetail() {
                 </span>
               </span>
               <div className="sellingProductHeaderPricePrice">
-                <span className="finalPrice">4923094320</span>
+                <span className="finalPrice">가격</span>
                 <span className="finalWon">원</span>
               </div>
             </div>
@@ -77,7 +88,12 @@ export default function ProductItemDetail() {
                 </span>
               </p>
               <div className="sellingProductOptionFormFooter">
-                <button className="shoppingBasketBtn">장바구니</button>
+                <button
+                  className="shoppingBasketBtn"
+                  onClick={handleShoppingBasket}
+                >
+                  장바구니
+                </button>
                 <button className="buyNow">바로구매</button>
               </div>
             </div>

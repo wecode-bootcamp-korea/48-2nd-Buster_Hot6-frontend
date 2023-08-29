@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Address.scss';
 
+const options = [
+  '선택해주세요',
+  'naver.com',
+  'daum',
+  'gmail',
+  'hanmail',
+  '직접 입력',
+];
+
 export default function Address() {
-  const options = [
-    '선택해주세요',
-    'naver.com',
-    'daum',
-    'gmail',
-    'hanmail',
-    '직접 입력',
-  ];
-  const [selected, setSelected] = useState(options && options[0]);
+  const [selected, setSelected] = useState(options[0]);
 
   return (
     <div>
@@ -51,10 +52,9 @@ export default function Address() {
                     <div className="addressInfoUserEmailDomainWrap">
                       <div className="addressInfoUserEmailDomainListWrap">
                         <select className="addressInfoUserEmailDomainList">
-                          {options &&
-                            options.map((option, index) => (
-                              <option key={index}>{option}</option>
-                            ))}
+                          {options.map((option, index) => (
+                            <option key={index}>{option}</option>
+                          ))}
                         </select>
                       </div>
                     </div>
@@ -69,10 +69,9 @@ export default function Address() {
                   <div className="addressInfoUserPhonenumFirstContainer">
                     <div className="addressInfoUserPhonenumFirstListWrap">
                       <select className="addressInfoUserEmailDomainList">
-                        {options &&
-                          options.map((option, index) => (
-                            <option key={index}>{option}</option>
-                          ))}
+                        {options.map((option, index) => (
+                          <option key={index}>{option}</option>
+                        ))}
                       </select>
                     </div>
                   </div>
@@ -123,10 +122,9 @@ export default function Address() {
                   <div className="addressInfoUserPhonenumFirstContainer">
                     <div className="addressInfoUserPhonenumFirstListWrap">
                       <select className="addressInfoUserEmailDomainList">
-                        {options &&
-                          options.map((option, index) => (
-                            <option key={index}>{option}</option>
-                          ))}
+                        {options.map((option, index) => (
+                          <option key={index}>{option}</option>
+                        ))}
                       </select>
                     </div>
                   </div>

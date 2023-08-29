@@ -16,13 +16,13 @@ const Cart = () => {
       <div className="cardList">
         <div className="today">오늘 출발</div>
         <div className="product">
-          <img className="img" src="#" alt="상품 이미지" />
+          <img className="img" src={cartItems.imgae} alt="상품 이미지" />
 
-          <span className="productName">[코튼리빙]40수 호텔수건</span>
+          <span className="productName">{cartItems.prouctName}</span>
         </div>
 
         <div className="modal">
-          <span>40tn 200g 화이트</span>
+          <span>{cartItems.productDetail}</span>
           <span className="price">29,000</span>
         </div>
         <span className="price">29,000</span>
@@ -45,7 +45,7 @@ const Cart = () => {
           <div>얼마</div>
         </div>
       </div>
-      <butto className="paymentButton">결제하기</butto>
+      <button className="paymentButton">결제하기</button>
     </div>
   );
 };

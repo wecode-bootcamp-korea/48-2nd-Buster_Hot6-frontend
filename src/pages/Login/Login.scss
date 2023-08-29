@@ -1,0 +1,81 @@
+.login {
+  height: 100%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .logoWrap {
+      display: flex;
+      width: 100%;
+      height: 50px;
+
+      .logo {
+        flex: 1 0 auto;
+        margin: 0 auto;
+        max-width: 300px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 40px 0;
+
+        .imageWrap {
+          display: flex;
+          align-items: center;
+
+          .logoPicture {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            padding: 5px;
+          }
+        }
+
+        .form {
+          width: 300px;
+
+          .email {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 13px 15px;
+            border-radius: 4px 4px 0 0;
+            border: 1px solid #999999;
+          }
+
+          .password {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 13px 15px;
+            border-radius: 0 0 4px 4px;
+            margin-top: -2px;
+            border: 1px solid #999999;
+          }
+
+          .btn {
+            margin: 20px 0;
+            padding: 15px 10px;
+            width: 100%;
+            height: 52px;
+            color: #ffff;
+            border: none;
+            background-color: gray;
+          }
+          .active {
+            background-color: #35c5f0;
+          }
+        }
+
+        .rePassword {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

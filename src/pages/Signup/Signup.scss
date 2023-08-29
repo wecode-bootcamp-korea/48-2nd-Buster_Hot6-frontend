@@ -1,0 +1,101 @@
+.signup {
+  .logoWrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+  }
+  .inputContainer {
+    margin: 0px auto;
+    padding: 10px 0px;
+    width: 360px;
+  }
+
+  .inputWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .email {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 13px 15px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999999;
+  }
+
+  .passwordWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .password {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 13px 15px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999999;
+  }
+
+  .rePasswordWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .rePassword {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 13px 15px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999999;
+    padding-top: 20px;
+  }
+
+  .nameWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .name {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 13px 15px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999999;
+    padding-top: 20px;
+  }
+
+  .btn {
+    margin: 20px 0;
+    padding: 15px 10px;
+    width: 100%;
+    height: 52px;
+    background-color: grey;
+    color: #ffff;
+    border: none;
+    border-radius: 5px;
+  }
+  .active {
+    background-color: #35c5f0;
+  }
+}

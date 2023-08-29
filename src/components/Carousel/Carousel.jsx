@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useInterval from '../../hooks/useInterval';
+import './Carousel.scss';
 
 const FIRST_SLIDE_INDEX = 0;
 
@@ -37,8 +38,8 @@ export default function Carousel({
       <div
         className={getContainerStyle(size)}
         style={{
-          transition: `transform 350ms ease 0s`,
-          transform: `translateX(-${currentIndex}00%)`,
+          transition: `${getImageSizeStyle(size).transition}`,
+          transform: `${getImageSizeStyle(size).transform}`,
         }}
       >
         {images.map((images, i) => {
@@ -47,11 +48,11 @@ export default function Carousel({
           );
         })}
       </div>
-      <div className="carouselBtnWrapper">
-        <button className="carouselBtn" onClick={prevSlide}>
+      <div className={getImageSizeStyle(size).btns}>
+        <button className={getImageSizeStyle(size).btn} onClick={prevSlide}>
           &lt;
         </button>
-        <button className="carouselBtn" onClick={nextSlide}>
+        <button className={getImageSizeStyle(size).btn} onClick={nextSlide}>
           &gt;
         </button>
       </div>
@@ -60,11 +61,8 @@ export default function Carousel({
 }
 
 function getContainerStyle(size) {
-  const baseStyle = 'baseStyle';
   const { container } = getImageSizeStyle(size);
-  const { transition } = getImageSizeStyle(size);
-  const { transform } = getImageSizeStyle(size);
-  return `${baseStyle} ${container} ${transition} ${transform}`;
+  return `${container}`;
 }
 
 function getImageSizeStyle(size, currentIndex) {
@@ -72,8 +70,10 @@ function getImageSizeStyle(size, currentIndex) {
     case 'productContainer':
       return {
         container: 'propductImgWrapper',
-        transition: `transform 350ms ease 0s`,
+        transition: 'transform 350ms ease 0s',
         transform: `translateX(-${currentIndex}00%)`,
+        btns: 'carouselBtnWrapper',
+        btn: 'carouselBtn',
         image: 'smallImg',
       };
     case 'medium':

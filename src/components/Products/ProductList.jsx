@@ -4,12 +4,13 @@ import PostListCard from './ProductListCard';
 
 export default function ProductList() {
   return (
-    <div className="productContainer">
-      <h1 className="productTitle">가구</h1>
-      <div className="productListFilter" />
-      <ul>
+    <section className="productContainer">
+      <header className="storeItemListHeader">
+        <h1 className="productTitle">가구</h1>
+      </header>
+      <div className="storeItemListContentContainer">
         <PostListCard />
-      </ul>
-    </div>
+      </div>
+    </section>
   );
 }

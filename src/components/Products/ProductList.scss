@@ -1,10 +1,15 @@
 .productContainer {
   margin-top: 50px;
-  margin-bottom: 16px;
   margin-right: auto;
   margin-left: auto;
   width: 1136px;
   max-width: 100%;
+}
+
+.storeItemListHeader {
+  margin-bottom: 20px;
+  display: flex;
+  position: relative;
 }
 
 .productTitle {

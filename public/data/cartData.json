@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "brand": "브랜드",
+    "productName": "[코튼리빙]40수 호텔수건",
+    "productDetail": "40tn 200g 화이트",
+    "price": 29000,
+    "delivery": "무료",
+    "image": "url_to_image1"
+  },
+  {
+    "id": 2,
+    "brand": "브랜드",
+    "productName": "[코튼리빙]40수 호텔수건",
+    "productDetail": "40tn 200g 화이트",
+    "price": 29000,
+    "delivery": "무료",
+    "image": "url_to_image1"
+  }
+]

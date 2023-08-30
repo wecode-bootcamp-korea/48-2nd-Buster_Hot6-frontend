@@ -21,11 +21,6 @@ const Categories = ({ category }) => {
       setCurrentIndex(Math.floor(category.cards.length / IMAGE_PER_VIEW) - 1);
     }
   };
-  // useEffect(() => {
-  //   fetch('/data/categories.json/1')
-  //     .then(res => res.json())
-  //     .then(result => setPictures(result));
-  // }, []);
 
   useEffect(() => {
     setSlicedArray(
@@ -51,6 +46,9 @@ const Categories = ({ category }) => {
           </div>
         ))}
       </div>
+      <button className="btn next" onClick={handleNext}>
+        &gt;
+      </button>
     </div>
   );
 };

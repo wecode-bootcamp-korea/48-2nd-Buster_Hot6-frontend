@@ -5,6 +5,7 @@ import Categories from './components/Categories';
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     fetch('/data/categories.json')
       .then(res => res.json())

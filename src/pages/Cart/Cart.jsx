@@ -4,28 +4,43 @@ import './Cart.scss';
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    fetch('/data/cart.json')
+  const getCart = () => {
+    fetch('/data/cartData.json', {
+      method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
+    })
       .then(response => response.json())
       .then(data => setCartItems(data));
+  };
+
+  useEffect(() => {
+    getCart();
   }, []);
 
   return (
     <div className="cart">
       <h1>브랜드</h1>
       <div className="cardList">
-        <div className="today">오늘 출발</div>
-        <div className="product">
-          <img className="img" src={cartItems.imgae} alt="상품 이미지" />
+        {cartItems.map(item => {
+          return (
+            <>
+              <div className="today">오늘 출발</div>
+              <div className="product">
+                <img className="img" src={item.image} alt="상품 이미지" />
 
-          <span className="productName">{cartItems.prouctName}</span>
-        </div>
+                <span className="productName">{item.productName}</span>
+              </div>
 
-        <div className="modal">
-          <span>{cartItems.productDetail}</span>
-          <span className="price">29,000</span>
-        </div>
-        <span className="price">29,000</span>
+              <div className="modal">
+                <span>{item.productDetail}</span>
+                <span className="price">{item.price}</span>
+              </div>
+              <span className="price">{item.price}</span>
+            </>
+          );
+        })}
       </div>
       <div className="payModal">
         <div className="modal">

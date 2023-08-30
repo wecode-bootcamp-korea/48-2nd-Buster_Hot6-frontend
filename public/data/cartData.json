@@ -6,15 +6,24 @@
     "productDetail": "40tn 200g 화이트",
     "price": 29000,
     "delivery": "무료",
-    "image": "url_to_image1"
+    "image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/169337139276053154.jpg?w=256&h=256&c=c"
   },
   {
     "id": 2,
     "brand": "브랜드",
-    "productName": "[코튼리빙]40수 호텔수건",
+    "productName": "[코튼리빙]35수 호텔수건",
     "productDetail": "40tn 200g 화이트",
     "price": 29000,
     "delivery": "무료",
-    "image": "url_to_image1"
+    "image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/169337139276053154.jpg?w=256&h=256&c=c"
+  },
+  {
+    "id": 3,
+    "brand": "브랜드",
+    "productName": "[코튼리빙]30수 호텔수건",
+    "productDetail": "40tn 200g 화이트",
+    "price": 29000,
+    "delivery": "무료",
+    "image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/169337139276053154.jpg?w=256&h=256&c=c"
   }
 ]

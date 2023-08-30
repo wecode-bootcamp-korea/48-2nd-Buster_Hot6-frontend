@@ -1,0 +1,83 @@
+.navBar {
+  display: flex;
+  height: 80px;
+  max-width: 1256px;
+  margin: 0 auto;
+  padding: 0 60px;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .community {
+    position: relative;
+    display: inline-block;
+    margin: 0px 10px;
+    padding: 21px 5px 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .shopping {
+    position: relative;
+    display: inline-block;
+    margin: 0px 10px;
+    padding: 21px 5px 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .searchBar {
+    position: relative;
+    width: 300px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+  }
+
+  .inputBar {
+    border: 1px solid grey;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    align-items: center;
+    padding: 0 30px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .btns {
+    margin-right: 20px;
+    margin-left: -200px;
+  }
+
+  .login {
+    border: none;
+    font-size: 14px;
+    width: auto;
+    height: 40px;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #35c5f0;
+    margin-right: 10px;
+  }
+  .signup {
+    border: none;
+    font-size: 14px;
+    width: auto;
+    height: 40px;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffff;
+    background-color: #35c5f0;
+    margin-right: 10px;
+  }
+}

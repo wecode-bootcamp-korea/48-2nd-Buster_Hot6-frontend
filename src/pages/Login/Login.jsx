@@ -16,7 +16,7 @@ export default function Login() {
   };
 
   const goToHome = () => {
-    fetch('http://10.58.52.142:3000/users/signin', {
+    fetch('http://10.58.52.83:3000/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function Login() {
           navigate('/');
         }
 
-        if (data.message === 'specified user does not exist') {
+        if (data.message === 'INVALID_USER user') {
           alert('존재하지 않는 유저입니다.');
         }
       });

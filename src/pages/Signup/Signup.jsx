@@ -32,7 +32,7 @@ export default function Signup() {
     nickname.length <= 15;
 
   const goToHome = () => {
-    fetch('http://10.58.52.142:3000/users/signup', {
+    fetch('http://10.58.52.83:3000/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,15 +45,16 @@ export default function Signup() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        if (data.accessToken) {
-          localStorage.setItem('token', data.accessToken);
-          navigate('/');
+        if (data.message === 'user is created') {
+          navigate('/login');
+
+          return;
         }
 
         if (data.message === 'KEY_ERROR') {
           alert('다시적어주세요');
         }
+
         if (data.message === '') {
           alert('다시적어주세요');
         }

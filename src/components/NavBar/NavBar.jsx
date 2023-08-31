@@ -38,7 +38,7 @@ export default function NavBar() {
         {isLoggedIn ? (
           <>
             {/* <Link to="/cart">장바구니 버튼</Link> */}
-            <FiBookmark />
+            <FiBookmark className="scrap" />
             <BsCart onClick={goToCart} />
           </>
         ) : (

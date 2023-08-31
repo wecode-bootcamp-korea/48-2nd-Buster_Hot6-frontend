@@ -41,8 +41,10 @@ const Categories = ({ category }) => {
         {slicedArray.map(item => (
           <div className="categoryCard" key={item.image}>
             <img className="images" src={item.image} alt={item.title} />
-            <h2 className="title">{item.title}</h2>
-            <p className="text">{item.user}</p>
+            <div className="content">
+              <h2 className="title">{item.title}</h2>
+              <p className="text">{item.content}</p>
+            </div>
           </div>
         ))}
       </div>

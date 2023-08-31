@@ -1,34 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ProductList.scss';
 import ProductListCard from './ProductListCard';
 
-export default function ProductList() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('http://10.58.52.193:3000/products/products/all', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-    })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw new Error('통신 실패 😭');
-      })
-      .catch(error => console.log(error))
-      .then(data => {
-        if (data) {
-          alert('성공');
-          setProducts(data.products);
-        } else {
-          alert('안 됨');
-        }
-      });
-  }, []);
-
+export default function ProductList({ products }) {
   return (
     <section className="productContainer">
       <header className="storeItemListHeader">

@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 export default function ProductItemDetail() {
   const {
     state: {
-      products: { id, image_url, name, description, price },
+      products: { image_url, name, description, price },
     },
   } = useLocation();
   const [selected, setSelected] = useState('상품 이름');

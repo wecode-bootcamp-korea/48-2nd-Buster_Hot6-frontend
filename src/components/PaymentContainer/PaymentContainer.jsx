@@ -1,7 +1,11 @@
 import React from 'react';
 import './PaymentContainer.scss';
 
-export default function PaymentContainer() {
+export default function PaymentContainer({ orderItem }) {
+  const totalPrice =
+    orderItem &&
+    orderItem.reduce((prev, current) => prev + parseInt(current.price), 0);
+
   return (
     <div className="paymentBoxContainer">
       <div className="paymentBoxWrap">
@@ -11,7 +15,7 @@ export default function PaymentContainer() {
               <h2 className="paymentContentTitle">결제금액</h2>
               <div className="paymentContentTextWrap">
                 <div className="paymentContentText">총 상품 금액</div>
-                <div className="paymentContentPrice">439,000 원</div>
+                <div className="paymentContentPrice">{totalPrice}</div>
               </div>
               <div className="paymentContentTextWrap">
                 <div className="paymentContentText">배송비</div>
@@ -25,13 +29,13 @@ export default function PaymentContainer() {
                 <div className="finalPriceText">최종 결제 금액</div>
                 <div className="finalPricesWrap">
                   <strong>
-                    <span className="finalPrice">439,300</span>&nbsp;원
+                    <span className="finalPrice">{totalPrice}</span>&nbsp;원
                   </strong>
                 </div>
               </div>
             </div>
           </div>
-          <button className="paymentBtn">439,300 원 결제하기</button>
+          <button className="paymentBtn">{totalPrice} 원 결제하기</button>
         </div>
       </div>
     </div>

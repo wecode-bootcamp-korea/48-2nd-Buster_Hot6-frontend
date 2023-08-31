@@ -1,0 +1,64 @@
+.banner {
+  position: relative;
+
+  .imgContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .images {
+    width: 90%;
+    height: 500px;
+    padding-top: 100px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .bannerTextWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bannerTitle,
+  .bannerId {
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+    color: white;
+    padding: 2px 5px;
+  }
+
+  .bannerTitle {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .bannerId {
+    font-size: 20px;
+  }
+
+  .btn {
+    position: absolute;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.5s;
+    top: 50%;
+  }
+
+  .next {
+    right: 24px;
+  }
+  .prev {
+    left: 24px;
+  }
+}

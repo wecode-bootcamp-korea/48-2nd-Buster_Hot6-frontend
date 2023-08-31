@@ -1,0 +1,21 @@
+.ordersContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 1256px;
+  padding: 0px 60px;
+  margin: 0px auto;
+  flex: 0 0 auto;
+}
+
+.mainContainer {
+  flex: 1 0 0px;
+}
+
+.productContainer {
+  position: relative;
+  flex: 0 1 0px;
+  min-width: 366px;
+  margin-left: 40px;
+}

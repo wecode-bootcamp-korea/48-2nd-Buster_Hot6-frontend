@@ -1,0 +1,154 @@
+.storeItemListContentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.storeItemContentBox {
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.storeItemContentWrap {
+}
+
+.storeItemContent {
+  display: block;
+  padding: 0 10px 30px;
+  position: relative;
+  font-size: 15px;
+}
+
+.storeItemOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.storeItemImg {
+  width: auto;
+  margin: 0 -10px;
+  position: relative;
+}
+
+.storeProductItemImgWrap {
+  position: relative;
+  background-color: #f5f5f5;
+  padding-bottom: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.productItemImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+
+.storeItemScrapBadge {
+  bottom: 12px;
+  right: 12px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  z-index: 2;
+  transition: opacity 0.1s;
+  cursor: pointer;
+}
+
+.productItemHeader {
+  margin: 9px 0px 0px;
+}
+
+.productItemHeaderBrand {
+  display: block;
+  color: rgb(117, 117, 117);
+  word-break: break-all;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.productItemHeaderName {
+  max-height: 34px;
+  margin-top: 5px;
+  word-break: break-all;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+  color: rgb(0, 0, 0);
+  transition: opacity 0.1s ease 0s;
+  overflow: hidden;
+}
+
+.productItemPrice {
+  margin: 2px 0px 0px;
+}
+
+.productItemReview {
+  margin: 3px 0px 0px;
+}
+
+.storeItemDescriptionContentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.storeItemDescriptionContentHeader {
+  margin-top: 9px;
+}
+
+.storeItemDescriptionBrand {
+  display: block;
+  font-size: 11px;
+  color: #828c94;
+}
+
+.storeItemDescriptionName {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+  max-height: 34px;
+  color: #424242;
+  transition: opacity 0.1s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.storeItemDescriptionPrice {
+  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 700;
+}
+
+.storeItemDescriptionOriginalPrice {
+  color: #000;
+  margin-right: 4px;
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 700;
+}

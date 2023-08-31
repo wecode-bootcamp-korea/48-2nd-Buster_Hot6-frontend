@@ -1,0 +1,98 @@
+.paymentBoxContainer {
+  position: sticky;
+  top: 81px;
+}
+
+.paymentBoxWrap {
+  position: relative;
+}
+
+.paymentBoxPadding {
+  padding-top: 40px;
+}
+
+.paymentBox {
+  border-radius: 4px;
+  border: 1px solid rgb(234, 235, 239);
+}
+
+.paymentContentBox {
+  padding: 20px 24px 23px;
+}
+
+.paymentContentTitle {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.paymentContentTextWrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.paymentContentText {
+  width: 100px;
+  font-size: 15px;
+  line-height: 22px;
+  color: rgb(130, 140, 148);
+}
+
+.paymentContentPrice {
+  font-weight: 600;
+  flex: 1 0 0px;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: right;
+  color: rgb(47, 52, 56);
+}
+
+.finalPriceWrap {
+  display: flex;
+  margin-top: 20px;
+  border-top: 1px solid rgb(234, 235, 239);
+  padding-top: 19px;
+}
+
+.finalPriceText {
+  flex: 1 0 0px;
+  width: 150px;
+  line-height: 27px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.finalPricesWrap {
+  font-size: 22px;
+  line-height: 27px;
+  text-align: right;
+  color: rgb(0, 0, 0);
+}
+
+.finalPrice {
+  color: rgb(53, 197, 240);
+}
+
+.paymentBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px 10px;
+  line-height: 20px;
+  font-size: 17px;
+  min-height: 50px;
+  background-color: #35c5f0;
+  border: 1px solid #35c5f0;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

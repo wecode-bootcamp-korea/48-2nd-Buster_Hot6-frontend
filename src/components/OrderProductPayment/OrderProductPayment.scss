@@ -1,0 +1,82 @@
+.addressContentContainer {
+  margin-bottom: 50px;
+}
+
+.addressContentInfotTitleWrap {
+  margin: 0px auto;
+  width: auto;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+
+.addressContentInfoTitle {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+
+.orderProductPaymentContainer {
+  overflow: hidden;
+  margin: -3px;
+  padding: 23px 3px 3px;
+}
+
+.orderProductPaymentWrap {
+  width: auto;
+  max-width: 100%;
+  min-height: 1px;
+  margin: -3px;
+  padding: 3px;
+}
+
+.orderProductPaymentPoint {
+  display: flex;
+  margin-bottom: 12px;
+  max-width: 322px;
+}
+
+.orderProductPaymentPointInput {
+  padding: 8px 15px 9px;
+  display: inline-block;
+  width: 220px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  line-height: 21px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.paymentAllBtn {
+  height: 18px;
+  font-size: 15px;
+  padding: 11px 10px;
+  min-height: 40px;
+  border: 1px solid #35c5f0;
+  background-color: #fff;
+  color: #35c5f0;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+.paymentPointWrap {
+  font-size: 15px;
+  line-height: 18px;
+  color: rgb(41, 41, 41);
+}
+
+.paymentPoint {
+  margin-left: 5px;
+  color: rgb(53, 197, 240);
+  font-weight: bold;
+}

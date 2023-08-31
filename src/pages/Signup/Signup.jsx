@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Signup.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { BASE_API_URL } from '../../config';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ export default function Signup() {
     nickname.length <= 15;
 
   const goToHome = () => {
-    fetch('http://10.58.52.83:3000/users/signup', {
+    fetch(`${BASE_API_URL}users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

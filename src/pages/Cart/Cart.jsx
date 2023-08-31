@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cart.scss';
+import { BASE_API_URL } from '../../config';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const Cart = () => {
 
   const getCart = () => {
     fetch('/data/cartData.json', {
-      // fetch('http://10.58.52.83:3000/cart/getCartList', {
+      // fetch(`${BASE_API_URL}cart/getCartList`, {
       method: 'GET',
       headers: {
         authorization: localStorage.getItem('token'),

@@ -19,12 +19,13 @@ const Cart = () => {
         if (data.message === 'INVALID_ACCESS_TOKEN') {
           alert('로그인이 필요합니다.');
           navigate('/login');
-        } else {
-          console.log('??', data);
         }
 
         setCartItems(data);
       });
+  };
+  const goToOrder = () => {
+    navigate('/orders');
   };
 
   useEffect(() => {
@@ -41,7 +42,6 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h1>브랜드</h1>
       <div className="cardList">
         {cartItems.map(item => {
           return (
@@ -80,7 +80,9 @@ const Cart = () => {
           <div>{(totalPrice - discountPrice).toLocaleString()}원</div>
         </div>
       </div>
-      <button className="paymentButton">결제하기</button>
+      <button onClick={goToOrder} className="paymentButton">
+        결제하기
+      </button>
     </div>
   );
 };

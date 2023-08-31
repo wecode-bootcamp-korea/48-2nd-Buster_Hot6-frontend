@@ -31,9 +31,13 @@
   }
 
   .bannerTitle {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 50px;
+    text-shadow: 2px 2px 4px #000000;
+
+    color: #ffffff;
+    border-radius: 5px;
   }
 
   .bannerId {
@@ -56,9 +60,9 @@
   }
 
   .next {
-    right: 24px;
+    right: 35px;
   }
   .prev {
-    left: 24px;
+    left: 35px;
   }
 }

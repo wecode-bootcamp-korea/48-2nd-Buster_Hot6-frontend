@@ -7,6 +7,10 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleHome = () => {
+    navigate('/');
+  };
+
   const handleEmail = e => {
     setEmail(e.target.value);
   };
@@ -52,7 +56,7 @@ export default function Login() {
                 src="/images/homelogo.png"
                 alt="logo"
               />
-              <p>오늘의 집</p>
+              <p onClick={handleHome}>오늘의 집</p>
             </div>
 
             <div className="form">

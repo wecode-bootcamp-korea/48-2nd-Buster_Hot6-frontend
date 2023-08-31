@@ -37,7 +37,6 @@ export default function NavBar() {
       <div className="btns">
         {isLoggedIn ? (
           <>
-            {/* <Link to="/cart">장바구니 버튼</Link> */}
             <FiBookmark className="scrap" />
             <BsCart onClick={goToCart} />
           </>

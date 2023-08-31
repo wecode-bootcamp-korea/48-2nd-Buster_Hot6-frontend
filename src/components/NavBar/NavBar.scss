@@ -13,21 +13,29 @@
   }
 
   .community {
+    color: black;
     position: relative;
     display: inline-block;
     margin: 0px 10px;
     padding: 21px 5px 15px;
     font-size: 18px;
     font-weight: bold;
+    &:hover {
+      color: #35c5f0;
+    }
   }
 
   .shopping {
+    color: black;
     position: relative;
     display: inline-block;
     margin: 0px 10px;
     padding: 21px 5px 15px;
     font-size: 18px;
     font-weight: bold;
+    &:hover {
+      color: #35c5f0;
+    }
   }
 
   .searchBar {

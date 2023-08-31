@@ -5,6 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Signup() {
   const navigate = useNavigate();
 
+  const handleHome = () => {
+    navigate('/');
+  };
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
@@ -70,7 +74,7 @@ export default function Signup() {
       <section className="logoContainer">
         <div className="logoWrap">
           <img className="logo" src="/images/homelogo.png" alt="logo" />
-          <p>오늘의집</p>
+          <p onClick={handleHome}>오늘의집</p>
         </div>
         <section className="inputContainer">
           <section className="inputWrap">
@@ -91,7 +95,7 @@ export default function Signup() {
           </section>
           <section className="passwordWrap">
             <div>비밀번호</div>
-            <div>8자 이상 입력해주세요.</div>
+            <div>8자 이상 입력해주세요.(대/소문자,특수문자 포함)</div>
             <input
               onChange={handleInfoPassword}
               value={password}

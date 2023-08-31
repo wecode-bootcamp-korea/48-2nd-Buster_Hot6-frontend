@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
-import PostListCard from './ProductListCard';
+import ProductListCard from './ProductListCard';
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.52.235:3000/products/bro', {
+    fetch('http://10.58.52.193:3000/products/products/all', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -20,7 +20,7 @@ export default function ProductList() {
       })
       .catch(error => console.log(error))
       .then(data => {
-        if (data.message === 'success') {
+        if (data) {
           alert('성공');
           setProducts(data.products);
         } else {
@@ -35,8 +35,8 @@ export default function ProductList() {
         <h1 className="productTitle">가구</h1>
       </header>
       <div className="storeItemListContentContainer">
-        {products.map((item, i) => (
-          <PostListCard item={item} key={i} />
+        {products.map((products, i) => (
+          <ProductListCard products={products} key={i} />
         ))}
       </div>
     </section>

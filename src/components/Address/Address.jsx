@@ -14,7 +14,7 @@ export default function Address() {
   const [selected, setSelected] = useState(options[0]);
 
   return (
-    <div>
+    <>
       <h1 className="addressContentTitle">주문/결제</h1>
       <section className="addressContentContainer">
         <section className="addressContentInfoTitleWrap">
@@ -165,6 +165,6 @@ export default function Address() {
           </section>
         </div>
       </section>
-    </div>
+    </>
   );
 }

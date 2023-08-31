@@ -12,3 +12,10 @@
 .mainContainer {
   flex: 1 0 0px;
 }
+
+.productContainer {
+  position: relative;
+  flex: 0 1 0px;
+  min-width: 366px;
+  margin-left: 40px;
+}

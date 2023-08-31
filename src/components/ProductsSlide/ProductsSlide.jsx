@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductsSlide.scss';
 import Carousel from '../Carousel/Carousel';
 
@@ -9,7 +9,36 @@ export default function ProductsSlide() {
     `https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/169270494609713014.png?w=2880`,
   ];
 
-  const [cartegory, setCartegory] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://10.58.52.193:3000/products/products/all', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error('통신 실패 😭');
+      })
+      .catch(error => console.log(error))
+      .then(data => {
+        if (data) {
+          alert('성공');
+          console.log('데이터 있음', data);
+          setProducts(data.products);
+        } else {
+          alert('안 됨');
+        }
+      });
+  }, []);
+
+  const categories = [
+    ...new Set(products.map(product => product.category_name)),
+  ];
 
   return (
     <div className="container">
@@ -19,11 +48,11 @@ export default function ProductsSlide() {
       <section className="cartegoryContaienr">
         <h1 className="cartegoryTitle">카테고리</h1>
         <div className="cartegoryListWrap">
-          {cartegory.map((item, i) => {
+          {categories.map((item, i) => {
             return (
               <div className="cartegoryItemWrap" key={i}>
-                <img className="cartegoryItemImg" src={item.img} alt="?" />
-                <div className="cartegoryItemTitle">{item.item}</div>
+                {/* <img className="cartegoryItemImg" src={item.img} alt="?" /> */}
+                <div className="cartegoryItemTitle">{item}</div>
               </div>
             );
           })}

@@ -6,15 +6,25 @@ import Reviews from '../Reviews/Reviews';
 import { useLocation } from 'react-router-dom';
 
 export default function ProductItemDetail() {
-  // const {
-  //   state: {
-  //     product: { id, image_url, name, description, price },
-  //   },
-  // } = useLocation();
+  const {
+    state: {
+      products: { id, image_url, name, description, price },
+    },
+  } = useLocation();
   const [selected, setSelected] = useState('상품 이름');
   const handleSelect = e => setSelected(e.target.value);
   const handleShoppingBasket = e => {
-    //여기서 장바구니에 추가하면 됨!
+    // // 여기서 장바구니에 추가하면 됨!
+    // const product = {
+    //   id,
+    //   image_url,
+    //   name,
+    //   description,
+    //   price,
+    //   option: selected,
+    //   quantity: 1,
+    // };
+    // // 추가적으로 함수 만들어서 유저 식별 고유 id 와 product 넣어주기
   };
 
   return (
@@ -31,7 +41,8 @@ export default function ProductItemDetail() {
               <div className="sellingProductImg">
                 <img
                   className="sellingProductImgUrl"
-                  src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168266558366770905.png?gif=1&w=1280&h=1280&c=c&webp=1"
+                  src={image_url}
+                  alt="상품 이미지"
                 />
               </div>
             </div>
@@ -41,7 +52,7 @@ export default function ProductItemDetail() {
               <h1 className="sellingProductHeaderTitle">
                 <p className="sellingProductHeaderTitleBrand">브랜드?</p>
                 <div className="sellingProductHeaderTitleNameWrap">
-                  <span className="sellingProductHeaderTitleName">상품명</span>
+                  <span className="sellingProductHeaderTitleName">{name}</span>
                   <button className="sellingProductHeaderBookmar" />
                 </div>
               </h1>
@@ -61,12 +72,12 @@ export default function ProductItemDetail() {
               <span className="sellingProductHeaderPriceWrap">
                 <span className="sellingProductHeaderPriceDiscount">63%</span>
                 <span className="sellingProductHeaderPriceOriginal">
-                  <span className="price">399340</span>
+                  <span className="price">{description}</span>
                   <span className="won">원</span>
                 </span>
               </span>
               <div className="sellingProductHeaderPricePrice">
-                <span className="finalPrice">가격</span>
+                <span className="finalPrice">{price}</span>
                 <span className="finalWon">원</span>
               </div>
             </div>

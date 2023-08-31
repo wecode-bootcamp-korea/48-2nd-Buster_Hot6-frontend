@@ -3,11 +3,10 @@ import './ProductListCard.scss';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProductListCard({
-  product,
-  product: { id, image_url, name, description, price },
+  products,
+  products: { id, image_url, name, description, price },
 }) {
   const navigate = useNavigate();
-
   return (
     <div className="storeItemContentBox">
       <div className="storeItemContentWrap">
@@ -15,7 +14,7 @@ export default function ProductListCard({
           <div
             className="storeItemOverlay"
             onClick={() => {
-              navigate(`/store/${id}`, { state: { product } });
+              navigate(`/store/${id}`, { state: { products } });
             }}
           />
           <div className="storeItemImg">

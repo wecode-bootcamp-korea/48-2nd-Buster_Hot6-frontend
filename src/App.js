@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import Store from './pages/Products/Products';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Orders from './pages/Orders/Orders';
+import HomeDetail from './pages/HomeDetail/HomeDetail';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
+      { path: '/:id', element: <HomeDetail /> },
       { path: '/store', element: <Store /> },
       { path: '/store/:id', element: <ProductDetail /> },
       { path: '/orders', element: <Orders /> },

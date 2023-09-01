@@ -1,6 +1,5 @@
 import React from 'react';
 import './ProductItemTap.scss';
-import ProductItemDetailInfo from '../ProductItemDetailInfo/ProductItemDetailInfo';
 
 export default function ProductItemTap() {
   const navItem = ['상품정보', '리뷰', '배송/환불'];

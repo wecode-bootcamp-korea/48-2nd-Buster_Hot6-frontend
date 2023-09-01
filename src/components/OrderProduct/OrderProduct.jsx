@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './OrderProduct.scss';
 import OrderProductCard from '../OrderProductCard/OrderProductCard';
+import { BASE_API_URL } from '../../config';
+import { useNavigate } from 'react-router-dom';
 
 export default function OrderProduct({ orderItem }) {
   return (
@@ -11,10 +13,8 @@ export default function OrderProduct({ orderItem }) {
       <div className="addressInfoWrap">
         <div className="orderProductContentContainer">
           <section className="orderProductContentWrap">
-            {orderItem.map(() => {
-              return (
-                <OrderProductCard orderItem={orderItem} key={orderItem.id} />
-              );
+            {orderItem.map(item => {
+              return <OrderProductCard orderItem={item} key={orderItem.id} />;
             })}
           </section>
         </div>

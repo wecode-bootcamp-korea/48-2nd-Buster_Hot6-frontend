@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Address.scss';
 import DaumPostcode from 'react-daum-postcode';
 
 const options = [
   '선택해주세요',
   'naver.com',
-  'daum',
-  'gmail',
-  'hanmail',
+  'daum.net',
+  'gmail.com',
+  'hanmail.net',
   '직접 입력',
 ];
 
 const numOptions = ['010', '011'];
 
-export default function Address() {
+export default function Address({ handleOrdersData, setOrdersData }) {
   const [selected, setSelected] = useState(options[0]);
   const [openPostcode, setOpenPostcode] = useState(false);
-  const [Address, setAddress] = useState('');
-  const [zonecode, setZonecode] = useState('');
-
+  const [address, setAddress] = useState('');
+  const [zoneCode, setZonecode] = useState('');
+  const [detailAddress, setDetailAddress] = useState('');
   const handle = {
     clickButton: () => {
       setOpenPostcode(current => !current);
@@ -30,9 +30,11 @@ export default function Address() {
       setOpenPostcode(false);
     },
   };
-
+  useEffect(() => {
+    setOrdersData(prev => ({ ...prev, zoneCode, address, detailAddress }));
+  }, [address, zoneCode]);
   return (
-    <>
+    <div onChange={e => handleOrdersData(e)}>
       <h1 className="addressContentTitle">주문/결제</h1>
       <section className="addressContentContainer">
         <section className="addressContentInfoTitleWrap">
@@ -59,6 +61,7 @@ export default function Address() {
                       <input
                         className="addressInfoUserEmailInput"
                         type="email"
+                        name="email"
                         placeholder="이메일"
                         title="이메일 앞부분"
                         maxLength="20"
@@ -69,7 +72,10 @@ export default function Address() {
                   <div className="addressInfoUserEmailDomainContainer">
                     <div className="addressInfoUserEmailDomainWrap">
                       <div className="addressInfoUserEmailDomainListWrap">
-                        <select className="addressInfoUserEmailDomainList">
+                        <select
+                          name="domain"
+                          className="addressInfoUserEmailDomainList"
+                        >
                           {options.map((option, index) => (
                             <option key={index}>{option}</option>
                           ))}
@@ -86,7 +92,10 @@ export default function Address() {
                 <div className="addressInfoUserEmailInputFirstWrapAt">
                   <div className="addressInfoUserPhonenumFirstContainer">
                     <div className="addressInfoUserPhonenumFirstListWrap">
-                      <select className="addressInfoUserEmailDomainList">
+                      <select
+                        name="firstPhoneNumber"
+                        className="addressInfoUserEmailDomainList"
+                      >
                         {numOptions.map((option, index) => (
                           <option key={index}>{option}</option>
                         ))}
@@ -97,6 +106,7 @@ export default function Address() {
                     <input
                       className="addressInfoUserEmailInput"
                       type="tel"
+                      name="secondPhoneNumber"
                       placeholder="입력해주세요"
                       maxLength="9"
                     />
@@ -118,7 +128,7 @@ export default function Address() {
               <div className="addressInfoUserNameInputWrap">
                 <input
                   className="addressInfoUserNameInput"
-                  name="name"
+                  name="deliveryAddress"
                   maxLength="10"
                 />
               </div>
@@ -128,7 +138,7 @@ export default function Address() {
               <div className="addressInfoUserNameInputWrap">
                 <input
                   className="addressInfoUserNameInput"
-                  name="name"
+                  name="deliveryName"
                   maxLength="10"
                 />
               </div>
@@ -139,7 +149,10 @@ export default function Address() {
                 <div className="addressInfoUserEmailInputFirstWrapAt">
                   <div className="addressInfoUserPhonenumFirstContainer">
                     <div className="addressInfoUserPhonenumFirstListWrap">
-                      <select className="addressInfoUserEmailDomainList">
+                      <select
+                        name="deliveryFirstPhoneNumber"
+                        className="addressInfoUserEmailDomainList"
+                      >
                         {numOptions.map((option, index) => (
                           <option key={index}>{option}</option>
                         ))}
@@ -149,6 +162,7 @@ export default function Address() {
                   <div className="addressInfoUserPhonenumLast">
                     <input
                       className="addressInfoUserEmailInput"
+                      name="deliverySecondPhoneNumber"
                       type="tel"
                       placeholder="입력해주세요"
                       maxLength="9"
@@ -202,18 +216,22 @@ export default function Address() {
                       <input
                         className="ariveAddressNumInfoUser"
                         disabled
-                        placeholder={zonecode}
+                        placeholder={zoneCode}
                       />
                     </div>
                   </div>
                   <div className="finalAriveAddressWrap">
                     <textarea
                       className="finalAriveAddress"
-                      placeholder={Address}
+                      placeholder={address}
                     />
                   </div>
                   <div className="finalAriveAddressWrap">
-                    <input className="addressInfoUserEmailInput" />
+                    <input
+                      name="detailAddress"
+                      onChange={e => setDetailAddress(e.target.value)}
+                      className="addressInfoUserEmailInput"
+                    />
                   </div>
                 </div>
               </div>
@@ -221,6 +239,6 @@ export default function Address() {
           </section>
         </div>
       </section>
-    </>
+    </div>
   );
 }

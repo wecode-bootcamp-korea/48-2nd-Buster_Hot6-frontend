@@ -3,7 +3,7 @@ import './ProductItemDetailInfo.scss';
 import { FiStar } from 'react-icons/fi';
 import ReviewModal from '../ReviewModal/ReviewModal';
 
-export default function ProductItemDetailInfo() {
+export default function ProductItemDetailInfo({ description }) {
   const starArr = [1, 2, 3, 4, 5];
   const [hover, setHover] = useState(0);
   const [starNum, setStarNum] = useState(0);
@@ -17,13 +17,7 @@ export default function ProductItemDetailInfo() {
       <section className="productionsellingSection">
         <header className="productionsellingSectionHeader">
           <h1 className="productionsellingSectionTitle">상품정보</h1>
-          <div className="productionsellingSectionInfo">
-            <img
-              className="productionsellingSectionInfoImg"
-              src="https://exit.ohou.se/3a864a80cf86d7a03f1425ab18c4ad73024312b2/ai.esmplus.com/pbcottcon/2021_%EC%BD%94%ED%8A%BC%EB%A6%AC%EB%B9%99/%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%B5%E1%86%B8_%E1%84%87%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%91%E1%85%A1%E1%84%90%E1%85%B3%E1%84%82%E1%85%A5_%E1%84%87%E1%85%A2%E1%84%82%E1%85%A5_%E1%84%89%E1%85%AE%E1%84%80%E1%85%A5%E1%86%AB.jpg"
-              alt="상세이미지"
-            />
-          </div>
+          <div className="productionsellingSectionInfo">{description}</div>
         </header>
       </section>
       <section className="productionsellingSection">

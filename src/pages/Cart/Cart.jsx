@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Cart.scss';
 import { BASE_API_URL } from '../../config';
+import './Cart.scss';
 
 const Cart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
 
   const getCart = () => {
-    fetch('/data/cartData.json', {
-      // fetch(`${BASE_API_URL}cart/getCartList`, {
+    fetch(`${BASE_API_URL}cart/getCartList`, {
       method: 'GET',
       headers: {
         authorization: localStorage.getItem('token'),
@@ -21,7 +20,6 @@ const Cart = () => {
           alert('로그인이 필요합니다.');
           navigate('/login');
         }
-
         setCartItems(data);
       });
   };

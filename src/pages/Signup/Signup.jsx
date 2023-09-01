@@ -56,6 +56,10 @@ export default function Signup() {
           return;
         }
 
+        if (data.message === 'INVALID_USER password') {
+          alert('비밀번호 형태가 잘못되었습니다.');
+        }
+
         if (data.message === 'KEY_ERROR') {
           alert('다시적어주세요');
         }

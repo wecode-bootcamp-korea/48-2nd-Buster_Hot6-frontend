@@ -1,6 +1,6 @@
 import React from 'react';
-import './ProductList.scss';
 import ProductListCard from './ProductListCard';
+import './ProductList.scss';
 
 export default function ProductList({ products }) {
   return (

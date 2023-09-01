@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Categories.scss';
 
 const Categories = ({ category, hash }) => {
   const [slicedArray, setSlicedArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
   const IMAGE_PER_VIEW = 4;
 
   const handleNext = () => {
@@ -31,6 +33,8 @@ const Categories = ({ category, hash }) => {
     );
   }, [category, currentIndex]);
 
+  console.log(slicedArray);
+
   return (
     <div className="categoriesWrapper">
       <p className="hash">#{hash}</p>
@@ -39,7 +43,11 @@ const Categories = ({ category, hash }) => {
       </button>
       <div className="categoriesContainer">
         {slicedArray.map(item => (
-          <div className="categoryCard" key={item.image}>
+          <div
+            className="categoryCard"
+            key={item.image}
+            onClick={() => navigate(`/${item.id}`)}
+          >
             <img className="images" src={item.image} alt={item.title} />
             <div className="content">
               <h2 className="title">{item.title}</h2>

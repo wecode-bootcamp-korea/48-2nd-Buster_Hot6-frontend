@@ -14,7 +14,7 @@ export default function Avatar({ image, size = 'medium' }) {
 }
 
 function getContainerStyle(size) {
-  const baseStyle = 'baseStyle';
+  const baseStyle = 'avatar';
   const { container } = getImageSizeStyle(size);
   return `${baseStyle} ${container}`;
 }

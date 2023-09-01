@@ -9,24 +9,33 @@
 
   .logo {
     font-size: 30px;
+    color: black;
   }
 
   .community {
+    color: black;
     position: relative;
     display: inline-block;
     margin: 0px 10px;
     padding: 21px 5px 15px;
     font-size: 18px;
     font-weight: bold;
+    &:hover {
+      color: #35c5f0;
+    }
   }
 
   .shopping {
+    color: black;
     position: relative;
     display: inline-block;
     margin: 0px 10px;
     padding: 21px 5px 15px;
     font-size: 18px;
     font-weight: bold;
+    &:hover {
+      color: #35c5f0;
+    }
   }
 
   .searchBar {
@@ -38,6 +47,9 @@
     position: absolute;
     top: 30%;
     left: 10px;
+  }
+  .scrap {
+    margin-right: 15px;
   }
 
   .inputBar {

@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import './Signup.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { BASE_API_URL } from '../../config';
 
 export default function Signup() {
   const navigate = useNavigate();
+
+  const handleHome = () => {
+    navigate('/');
+  };
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +37,7 @@ export default function Signup() {
     nickname.length <= 15;
 
   const goToHome = () => {
-    fetch('http://10.58.52.142:3000/users/signup', {
+    fetch(`${BASE_API_URL}users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,15 +50,20 @@ export default function Signup() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        if (data.accessToken) {
-          localStorage.setItem('token', data.accessToken);
-          navigate('/');
+        if (data.message === 'user is created') {
+          navigate('/login');
+
+          return;
+        }
+
+        if (data.message === 'INVALID_USER password') {
+          alert('비밀번호 형태가 잘못되었습니다.');
         }
 
         if (data.message === 'KEY_ERROR') {
           alert('다시적어주세요');
         }
+
         if (data.message === '') {
           alert('다시적어주세요');
         }
@@ -69,7 +79,7 @@ export default function Signup() {
       <section className="logoContainer">
         <div className="logoWrap">
           <img className="logo" src="/images/homelogo.png" alt="logo" />
-          <p>오늘의집</p>
+          <p onClick={handleHome}>오늘의집</p>
         </div>
         <section className="inputContainer">
           <section className="inputWrap">
@@ -90,7 +100,7 @@ export default function Signup() {
           </section>
           <section className="passwordWrap">
             <div>비밀번호</div>
-            <div>8자 이상 입력해주세요.</div>
+            <div>8자 이상 입력해주세요.(대/소문자,특수문자 포함)</div>
             <input
               onChange={handleInfoPassword}
               value={password}

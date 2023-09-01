@@ -5,16 +5,15 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+    margin: auto;
   }
 
   .images {
     width: 90%;
     height: 500px;
-    padding-top: 100px;
-    &:hover {
-      transform: scale(1.1);
-    }
+    border-radius: 10px;
   }
 
   .bannerTextWrap {
@@ -25,15 +24,20 @@
   .bannerTitle,
   .bannerId {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     left: 100px;
     color: white;
-    padding: 2px 5px;
+    padding: 10px;
   }
 
   .bannerTitle {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px #000000;
+
+    color: #ffffff;
+    border-radius: 5px;
   }
 
   .bannerId {
@@ -50,15 +54,15 @@
     text-align: center;
     font-size: 40px;
     cursor: pointer;
-    margin: 0 5px;
+    margin: 5px 5px;
     transition: 0.5s;
     top: 50%;
   }
 
   .next {
-    right: 24px;
+    right: 35px;
   }
   .prev {
-    left: 24px;
+    left: 35px;
   }
 }

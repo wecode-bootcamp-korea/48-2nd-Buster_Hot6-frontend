@@ -1,7 +1,7 @@
 import React from 'react';
 import './PaymentContainer.scss';
 
-export default function PaymentContainer({ orderItem }) {
+export default function PaymentContainer({ handleClick, orderItem }) {
   const totalPrice =
     orderItem &&
     orderItem.reduce((prev, current) => prev + parseInt(current.price), 0);
@@ -35,7 +35,12 @@ export default function PaymentContainer({ orderItem }) {
               </div>
             </div>
           </div>
-          <button className="paymentBtn">{totalPrice} 원 결제하기</button>
+          <button
+            onClick={() => handleClick(totalPrice)}
+            className="paymentBtn"
+          >
+            {totalPrice} 원 결제하기
+          </button>
         </div>
       </div>
     </div>

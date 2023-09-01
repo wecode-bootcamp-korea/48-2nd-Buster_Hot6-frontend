@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { BASE_API_URL } from '../../config';
 import './Login.scss';
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleHome = () => {
+    navigate('/');
+  };
 
   const handleEmail = e => {
     setEmail(e.target.value);
@@ -16,7 +21,7 @@ export default function Login() {
   };
 
   const goToHome = () => {
-    fetch('http://10.58.52.142:3000/users/signin', {
+    fetch(`${BASE_API_URL}users/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +38,7 @@ export default function Login() {
           navigate('/');
         }
 
-        if (data.message === 'specified user does not exist') {
+        if (data.message === 'INVALID_USER user') {
           alert('존재하지 않는 유저입니다.');
         }
       });
@@ -52,7 +57,7 @@ export default function Login() {
                 src="/images/homelogo.png"
                 alt="logo"
               />
-              <p>오늘의 집</p>
+              <p onClick={handleHome}>오늘의 집</p>
             </div>
 
             <div className="form">

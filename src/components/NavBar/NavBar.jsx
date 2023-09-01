@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { BsSearch } from 'react-icons/bs';
+import { BsSearch, BsCart } from 'react-icons/bs';
+import { FiBookmark } from 'react-icons/fi';
 import './NavBar.scss';
 
 export default function NavBar() {
@@ -11,6 +12,11 @@ export default function NavBar() {
   const goToSignup = () => {
     navigate('/signup');
   };
+  const goToCart = () => {
+    navigate('/cart');
+  };
+
+  const isLoggedIn = localStorage.getItem('token');
 
   return (
     <nav className="navBar">
@@ -29,12 +35,21 @@ export default function NavBar() {
         <input className="inputBar" type="text" placeholder="통합검색" />
       </div>
       <div className="btns">
-        <button onClick={goToLogin} className="login">
-          로그인
-        </button>
-        <button onClick={goToSignup} className="signup">
-          회원가입
-        </button>
+        {isLoggedIn ? (
+          <>
+            <FiBookmark className="scrap" />
+            <BsCart onClick={goToCart} />
+          </>
+        ) : (
+          <>
+            <button onClick={goToLogin} className="login">
+              로그인
+            </button>
+            <button onClick={goToSignup} className="signup">
+              회원가입
+            </button>
+          </>
+        )}
       </div>
     </nav>
   );

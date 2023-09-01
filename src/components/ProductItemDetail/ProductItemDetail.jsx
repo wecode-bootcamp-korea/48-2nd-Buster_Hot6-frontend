@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
-import './ProductItemDetail.scss';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import ProductItemTap from '../ProductItemTap/ProductItemTap';
 import ProductItemDetailInfo from '../ProductItemDetailInfo/ProductItemDetailInfo';
 import Reviews from '../Reviews/Reviews';
-import { useLocation } from 'react-router-dom';
+import { BASE_API_URL } from '../../config';
+import './ProductItemDetail.scss';
 
 export default function ProductItemDetail() {
-  const {
-    state: {
-      products: { image_url, name, description, price },
-    },
-  } = useLocation();
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
   const [selected, setSelected] = useState('상품 이름');
+  const navigate = useNavigate();
+  useEffect(() => {
+    fetch(`${BASE_API_URL}products/detail/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        setProduct(data[0]);
+      });
+  }, []);
+
   const handleSelect = e => setSelected(e.target.value);
   const handleShoppingBasket = e => {
     // // 여기서 장바구니에 추가하면 됨!
@@ -25,14 +36,46 @@ export default function ProductItemDetail() {
     //   quantity: 1,
     // };
     // // 추가적으로 함수 만들어서 유저 식별 고유 id 와 product 넣어주기
+
+    fetch(`${BASE_API_URL}cart/cart`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        productId: parseInt(id),
+        productCount: 1,
+      }),
+    }).then(res => {
+      if (res.ok) {
+        navigate('/cart');
+      }
+    });
   };
+
+  if (Object.keys(product).length === 0) return null;
+
+  const {
+    brand_name,
+    discount_percentage,
+    product_category_name,
+    image_url,
+    name,
+    description,
+    price,
+  } = product;
+
+  const discountedPrice = (price * (100 - discount_percentage)) / 100;
 
   return (
     <div className="productSelling">
       <div className="productOverviewContainer">
         <nav className="commerceCartegry">
           <ol className="commerceCategryDetail">
-            <li className="commerceCategryDetailTitle">아아</li>
+            <li className="commerceCategryDetailTitle">
+              {product_category_name}
+            </li>
           </ol>
         </nav>
         <div className="productOverview">
@@ -50,7 +93,7 @@ export default function ProductItemDetail() {
           <div className="productOvewviewInfo">
             <div className="sellingProductHeader">
               <h1 className="sellingProductHeaderTitle">
-                <p className="sellingProductHeaderTitleBrand">브랜드?</p>
+                <p className="sellingProductHeaderTitleBrand">{brand_name}</p>
                 <div className="sellingProductHeaderTitleNameWrap">
                   <span className="sellingProductHeaderTitleName">{name}</span>
                   <button className="sellingProductHeaderBookmar" />
@@ -70,14 +113,20 @@ export default function ProductItemDetail() {
             </div>
             <div className="sellingProductHeaderPrice">
               <span className="sellingProductHeaderPriceWrap">
-                <span className="sellingProductHeaderPriceDiscount">63%</span>
+                <span className="sellingProductHeaderPriceDiscount">
+                  {discount_percentage}%
+                </span>
                 <span className="sellingProductHeaderPriceOriginal">
-                  <span className="price">{description}</span>
+                  <span className="price">
+                    {Number(price).toLocaleString()}
+                  </span>
                   <span className="won">원</span>
                 </span>
               </span>
               <div className="sellingProductHeaderPricePrice">
-                <span className="finalPrice">{price}</span>
+                <span className="finalPrice">
+                  {discountedPrice.toLocaleString()}
+                </span>
                 <span className="finalWon">원</span>
               </div>
             </div>
@@ -94,7 +143,7 @@ export default function ProductItemDetail() {
               <p className="sellingProductOptionFormPrice">
                 <span className="sellingProductOptionOrdeAmount">주문금액</span>
                 <span className="sellingProductOptioPriceWrap">
-                  <span>0</span>
+                  <span>{Number(price).toLocaleString()}</span>
                   <span>원</span>
                 </span>
               </p>
@@ -114,7 +163,7 @@ export default function ProductItemDetail() {
       <ProductItemTap />
       <div className="productionsellingDetailInfoContainer">
         <div className="productionsellingDetailInfo">
-          <ProductItemDetailInfo />
+          <ProductItemDetailInfo description={description} />
         </div>
         <div className="productionReviewFeedList">
           <article className="productionReviewItem">

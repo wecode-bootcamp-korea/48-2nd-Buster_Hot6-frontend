@@ -3,7 +3,6 @@ import './ProductListCard.scss';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProductListCard({
-  products,
   products: { id, image_url, name, description, price },
 }) {
   const navigate = useNavigate();
@@ -14,7 +13,7 @@ export default function ProductListCard({
           <div
             className="storeItemOverlay"
             onClick={() => {
-              navigate(`/store/${id}`, { state: { products } });
+              navigate(`/store/${id}`);
             }}
           />
           <div className="storeItemImg">
